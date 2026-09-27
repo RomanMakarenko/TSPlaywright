@@ -6,6 +6,6 @@
     ['html', { open: 'always', outputFolder: 'my-reports' }],        // HTML Report
     ['json', { outputFile: 'my-reports/results.json' }], // JSON Report
     ['junit', { outputFile: 'my-reports/results.xml' }]  // JUnit XML Report
-    ['./tests/day26/CustomReporter.ts', { customOption: 'some value' }], // Custom reporter
+    ['./tests/CustomReporter.ts', { customOption: 'some value' }], // Custom reporter
     ['allure-playwright', { outputFolder: 'allure-results' }]  // Allure Report
   ],
