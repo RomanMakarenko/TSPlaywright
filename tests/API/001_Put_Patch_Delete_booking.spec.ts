@@ -10,10 +10,11 @@
 
 import { test, expect } from "@playwright/test";
 import fs from 'fs';
+import path from 'path';
 
 // Utility function to read JSON data from file
 function readJson(filePath: string) {
-    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return JSON.parse(fs.readFileSync(path.resolve(__dirname, filePath), 'utf-8'));
 }
 
 const BASE_URL = "https://restful-booker.herokuapp.com";
@@ -77,7 +78,7 @@ test("Update Booking - Create, Get, partial update, Update and delete a Booking 
 
 
     // Step 4: Full Update the booking using PUT request with token in headers
-    const updateData = readJson("./test_data/PUT_request_body.json");
+    const updateData = readJson("./test_data/put_request_body.json");
 
     const updateResponse = await request.put(`${BASE_URL}/booking/${bookingId}`, {
         headers: {

@@ -7,6 +7,7 @@ https://fakeapi.platzi.com/en/rest/files/
 
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
+import path from 'path';
 
 
 test.describe.serial('File Upload and  Download', () => {
@@ -22,7 +23,7 @@ test.describe.serial('File Upload and  Download', () => {
                     file: {
                         name: 'Test2.txt',
                         mimeType: 'text/plain',
-                        buffer: fs.readFileSync('./uploads/Test2.txt')
+                        buffer: fs.readFileSync(path.resolve(__dirname, 'uploads/Test2.txt'))
                     }
                 }
             }

@@ -6,6 +6,7 @@ Request Body: Static
 */
 import { test, expect } from "@playwright/test";
 import fs from 'fs';
+import path from 'path';
 
 const BASE_URL = "https://restful-booker.herokuapp.com";
 
@@ -13,7 +14,7 @@ const BASE_URL = "https://restful-booker.herokuapp.com";
 test("Create booking with JSON data", async({request})=>{
 
 //Reading data from json
-const jsonFile = "test_data/post_request_body.json";
+const jsonFile = path.resolve(__dirname, "test_data/post_request_body.json");
 const requestPayload = JSON.parse(fs.readFileSync(jsonFile, 'utf-8'));
 
  //send the post request
